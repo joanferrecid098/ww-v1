@@ -1,0 +1,48 @@
+2023/05/17-23:42:39.787 249c Reusing MANIFEST C:\Users\joanf\Documents\GitHub\joanferrecid098.github.io\WhatsApp-Web-v1\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/05/17-23:42:39.790 249c Recovering log #249
+2023/05/17-23:42:40.145 249c Reusing old log C:\Users\joanf\Documents\GitHub\joanferrecid098.github.io\WhatsApp-Web-v1\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000249.log 
+2023/05/17-23:43:08.958 3854 Level-0 table #257: started
+2023/05/17-23:43:08.997 3854 Level-0 table #257: 1069081 bytes OK
+2023/05/17-23:43:08.999 3854 Delete type=0 #249
+2023/05/17-23:43:09.011 3854 Compacting 1@1 + 4@2 files
+2023/05/17-23:43:09.124 3854 Generated table #258@1: 25049 keys, 2196725 bytes
+2023/05/17-23:43:09.182 3854 Generated table #259@1: 3434 keys, 2161254 bytes
+2023/05/17-23:43:09.326 3854 Generated table #260@1: 29731 keys, 2243023 bytes
+2023/05/17-23:43:09.444 3854 Generated table #261@1: 59378 keys, 1568897 bytes
+2023/05/17-23:43:09.444 3854 Compacted 1@1 + 4@2 files => 8169899 bytes
+2023/05/17-23:43:09.445 3854 compacted to: files[ 0 0 4 0 0 0 0 ]
+2023/05/17-23:43:32.768 18a0 Level-0 table #263: started
+2023/05/17-23:43:32.952 18a0 Level-0 table #263: 1060004 bytes OK
+2023/05/17-23:43:32.956 18a0 Delete type=2 #251
+2023/05/17-23:43:32.956 18a0 Delete type=2 #252
+2023/05/17-23:43:32.957 18a0 Delete type=2 #253
+2023/05/17-23:43:32.957 18a0 Delete type=2 #254
+2023/05/17-23:43:32.957 18a0 Delete type=0 #256
+2023/05/17-23:43:32.958 18a0 Delete type=2 #257
+2023/05/17-23:43:34.015 18a0 Compacting 1@1 + 4@2 files
+2023/05/17-23:43:34.188 18a0 Generated table #264@1: 25677 keys, 2195864 bytes
+2023/05/17-23:43:34.240 18a0 Generated table #265@1: 3434 keys, 2160415 bytes
+2023/05/17-23:43:34.353 18a0 Generated table #266@1: 29642 keys, 2240744 bytes
+2023/05/17-23:43:34.468 18a0 Generated table #267@1: 69447 keys, 1821931 bytes
+2023/05/17-23:43:34.468 18a0 Compacted 1@1 + 4@2 files => 8418954 bytes
+2023/05/17-23:43:34.469 18a0 compacted to: files[ 0 0 4 0 0 0 0 ]
+2023/05/17-23:43:34.470 18a0 Delete type=2 #258
+2023/05/17-23:43:34.470 18a0 Delete type=2 #259
+2023/05/17-23:43:34.470 18a0 Delete type=2 #260
+2023/05/17-23:43:34.470 18a0 Delete type=2 #261
+2023/05/17-23:43:34.470 18a0 Delete type=2 #263
+2023/05/17-23:44:40.001 821c Level-0 table #269: started
+2023/05/17-23:44:40.143 821c Level-0 table #269: 1018749 bytes OK
+2023/05/17-23:44:40.148 821c Delete type=0 #262
+2023/05/17-23:44:41.106 18a0 Compacting 1@1 + 4@2 files
+2023/05/17-23:44:41.484 18a0 Generated table #270@1: 25756 keys, 2196034 bytes
+2023/05/17-23:44:41.594 18a0 Generated table #271@1: 3434 keys, 2160296 bytes
+2023/05/17-23:44:41.706 18a0 Generated table #272@1: 27465 keys, 2238162 bytes
+2023/05/17-23:44:41.838 18a0 Generated table #273@1: 83945 keys, 2195799 bytes
+2023/05/17-23:44:41.838 18a0 Compacted 1@1 + 4@2 files => 8790291 bytes
+2023/05/17-23:44:41.839 18a0 compacted to: files[ 0 0 4 0 0 0 0 ]
+2023/05/17-23:44:41.840 18a0 Delete type=2 #264
+2023/05/17-23:44:41.840 18a0 Delete type=2 #265
+2023/05/17-23:44:41.840 18a0 Delete type=2 #266
+2023/05/17-23:44:41.840 18a0 Delete type=2 #267
+2023/05/17-23:44:41.840 18a0 Delete type=2 #269
