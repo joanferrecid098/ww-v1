@@ -10,17 +10,21 @@ const client = new Client({
 });
 
 // EXPRESS
-app.post('/send', (req, res) => {
+app.post('/send', async (req, res) => {
     const { msg, groupName } = req.body;
 
-    const enviat = enviar({msg: msg, group: groupName});
+    const enviat = await enviar({msg: msg, group: groupName});
 
-    if ( enviat == true ) {
-        res.status(200).json({ msg: "msg enviat" })
-    } else if ( enviat == false ) {
+    if ( enviat ) {
+        console.log(`"${msg}" ha sido enviado a "${groupName}"`);
+        res.json({ msg: "msg enviat" });
+    } else {
+        console.log(`Error al enviar mensaje`);
         res.status(400).json({ msg: "error inesperat" })
     }
 });
+
+app.listen(8080);
 
 // BOT
 client.on('qr', qr => {
@@ -29,15 +33,16 @@ client.on('qr', qr => {
 
 client.on('ready', () => {
     console.log('Client is ready!');
-    app.listen(8080);
 });
 
 client.on('message', msg => {
     const enviat = enviar({msg: msg.body, group: "Jijijija"});
 
-    if ( enviat == true ) {
+    if ( enviat === true ) {
+        console.log(`"${msg}" ha sido enviado a "Jijijija"`);
         msg.reply("mensaje enviado")
-    } else if ( enviat == false ) {
+    } else if ( enviat === false ) {
+        console.log(`Error al enviar`);
         msg.reply("error")
     }
     
