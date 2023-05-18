@@ -54,7 +54,6 @@ client.on('message', msg => {
         console.log(`Error al enviar mensaje`);
         res.msg("error inesperat");
     }
-    
 });
 
 async function enviar({ msg, group }) {
