@@ -3,7 +3,9 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-app.use(express.json())
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const client = new Client({
@@ -11,26 +13,25 @@ const client = new Client({
 });
 
 // EXPRESS
-app.use(express.json());
-//app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+    res.render('index.html');
+});
 
-app.post('/send', (req, res) => {
+app.post('/send', async (req, res) => {
     const { msg, groupName } = req.body;
 
-    const enviat = enviar({msg: msg, group: groupName});
+    console.log(msg);
 
-    if ( enviat == true ) {
-        console.log(`"${msg}" enviat a "${groupName}".`)
-        res.status(200).json({ msg: "msg enviat" })
-    } else if ( enviat == false ) {
-        console.log('Error al enviar missatge.')
+    const enviat = await enviar({msg: msg, group: groupName});
+
+    if ( enviat ) {
+        console.log(`"${msg}" ha sido enviado a "${groupName}"`);
+        res.json({ msg: "msg enviat" });
+    } else {
+        console.log(`Error al enviar mensaje`);
         res.status(400).json({ msg: "error inesperat" })
     }
 });
-
-app.get('/', (req, res) => {
-    //res.render('/index.html')
-})
 
 app.listen(8080);
 
@@ -44,14 +45,15 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    //const enviat = enviar({msg: msg.body, group: "Jijijija"});
+    const enviat = enviar({msg: msg.body, group: "Jijijija"});
 
-    //if ( enviat == true ) {
-    //    msg.reply("mensaje enviado")
-    //} else if ( enviat == false ) {
-    //    msg.reply("error")
-    //}
-    
+    if ( enviat ) {
+        console.log(`"${msg}" ha sido enviado a "${groupName}"`);
+        res.msg("msg enviat");
+    } else {
+        console.log(`Error al enviar mensaje`);
+        res.msg("error inesperat");
+    }
 });
 
 async function enviar({ msg, group }) {
