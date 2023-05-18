@@ -126,6 +126,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-
-
 .wwebjs_auth/

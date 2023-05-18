@@ -1,8 +1,11 @@
 const qrcode = require('qrcode-terminal');
 const express = require('express');
+const path = require('path');
 
 const app = express();
-app.use(express.json())
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const client = new Client({
@@ -10,8 +13,14 @@ const client = new Client({
 });
 
 // EXPRESS
+app.get('/', (req, res) => {
+    res.render('index.html');
+});
+
 app.post('/send', async (req, res) => {
     const { msg, groupName } = req.body;
+
+    console.log(msg);
 
     const enviat = await enviar({msg: msg, group: groupName});
 
@@ -38,12 +47,12 @@ client.on('ready', () => {
 client.on('message', msg => {
     const enviat = enviar({msg: msg.body, group: "Jijijija"});
 
-    if ( enviat === true ) {
-        console.log(`"${msg}" ha sido enviado a "Jijijija"`);
-        msg.reply("mensaje enviado")
-    } else if ( enviat === false ) {
-        console.log(`Error al enviar`);
-        msg.reply("error")
+    if ( enviat ) {
+        console.log(`"${msg}" ha sido enviado a "${groupName}"`);
+        res.msg("msg enviat");
+    } else {
+        console.log(`Error al enviar mensaje`);
+        res.msg("error inesperat");
     }
     
 });
