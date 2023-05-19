@@ -6,6 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', './public');
+app.set('view engine', 'ejs');
 
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const client = new Client({
@@ -14,7 +16,13 @@ const client = new Client({
 
 // EXPRESS
 app.get('/', (req, res) => {
-    res.render('index.html');
+    res.render('index', { msg: false });
+});
+
+app.get('/sended/:msg', (req, res) => {
+    const { msg } = req.params;
+
+    res.render('index', { msg })
 });
 
 app.post('/send', async (req, res) => {
@@ -26,10 +34,10 @@ app.post('/send', async (req, res) => {
 
     if ( enviat ) {
         console.log(`"${msg}" ha sido enviado a "${groupName}"`);
-        res.json({ msg: "msg enviat" });
+        res.json({ msg: `"${msg}" ha sido enviado a "${groupName}"` });
     } else {
         console.log(`Error al enviar mensaje`);
-        res.status(400).json({ msg: "error inesperat" })
+        res.status(400).json({ msg: "Error al enviar mensaje" })
     }
 });
 
