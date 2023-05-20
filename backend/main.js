@@ -1,8 +1,10 @@
 const qrcode = require('qrcode-terminal');
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -15,31 +17,7 @@ const client = new Client({
 });
 
 // EXPRESS
-app.get('/', (req, res) => {
-    res.render('index', { msg: false });
-});
-
-app.get('/sended/:msg', (req, res) => {
-    const { msg } = req.params;
-
-    res.render('index', { msg })
-});
-
-app.post('/send', async (req, res) => {
-    const { msg, groupName } = req.body;
-
-    console.log(msg);
-
-    const enviat = await enviar({msg: msg, group: groupName});
-
-    if ( enviat ) {
-        console.log(`"${msg}" ha sido enviado a "${groupName}"`);
-        res.json({ msg: `"${msg}" ha sido enviado a "${groupName}"` });
-    } else {
-        console.log(`Error al enviar mensaje`);
-        res.status(400).json({ msg: "Error al enviar mensaje" })
-    }
-});
+require('./routers/msg.js')(app, enviar);
 
 app.listen(8080);
 
@@ -53,7 +31,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    const enviat = enviar({msg: msg.body, group: "Jijijija"});
+    /*const enviat = enviar({msg: msg.body, group: "Jijijija"});
 
     if ( enviat ) {
         console.log(`"${msg}" ha sido enviado a "${groupName}"`);
@@ -61,7 +39,7 @@ client.on('message', msg => {
     } else {
         console.log(`Error al enviar mensaje`);
         res.msg("error inesperat");
-    }
+    }*/
 });
 
 async function enviar({ msg, group }) {
