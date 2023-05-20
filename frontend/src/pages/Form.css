@@ -1,0 +1,59 @@
+input, select, button {
+    margin: 2px;
+    padding: 15px;
+    padding-right: 35px;
+    padding-left: 35px;
+    background: #cdcdcd;
+    border: 0px;
+    color: black;
+    border-radius: 4px;
+    font-size: medium;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+button {
+    margin-left: 10px;
+    background: #0059ff;
+    color: white;
+}
+
+.error, .inf {
+    margin: 2px;
+    background: red;
+    margin-top: 10px;
+    padding: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    color: whitesmoke;
+    border-radius: 4px;
+    width: max-content;
+    text-align: center;
+}
+
+.inf {
+    background: rgb(141, 194, 255);
+    color: black;
+}
+
+@media screen and (max-width: 80rem) {
+    input, select, button {
+        width: 100%;
+    }
+
+    input[type=text] {
+        padding-right: 0px;
+    }
+
+    .error, .inf {
+        width: 100%;
+        padding: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+
+    button {
+        margin: 2px;
+    }
+}
