@@ -6,6 +6,7 @@ const NavBar = () => {
     return (
         <header>
             <div className="navbar">
+                <span className="material-symbols-outlined">chat</span>
                 <Link to="/">Home</Link>
             </div>
         </header>

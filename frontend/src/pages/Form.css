@@ -3,6 +3,7 @@ input, select, button {
     padding: 15px;
     padding-right: 35px;
     padding-left: 35px;
+    margin-top: 20px;
     background: #cdcdcd;
     border: 0px;
     color: black;
@@ -12,10 +13,23 @@ input, select, button {
     resize: vertical;
 }
 
+input[type=number] {
+    display: none;
+}
+
 button {
     margin-left: 10px;
     background: #0059ff;
     color: white;
+}
+
+button:disabled {
+    opacity: 50%;
+}
+
+@keyframes cooldown {
+    0% { width: 100%; }
+    100% { width: 0; }
 }
 
 .error, .inf {
@@ -39,6 +53,7 @@ button {
 @media screen and (max-width: 80rem) {
     input, select, button {
         width: 100%;
+        margin-top: 4px;
     }
 
     input[type=text] {
