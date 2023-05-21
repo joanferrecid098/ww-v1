@@ -21,7 +21,7 @@ a {
     margin: 5px;
     margin-left: 40px;
     margin-right: 40px;
-    transition: 500ms;
+    transition: 250ms;
 }
 
 a:hover {

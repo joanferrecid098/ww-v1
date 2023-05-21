@@ -13,10 +13,23 @@ input, select, button {
     resize: vertical;
 }
 
+input[type=number] {
+    display: none;
+}
+
 button {
     margin-left: 10px;
     background: #0059ff;
     color: white;
+}
+
+button:disabled {
+    opacity: 50%;
+}
+
+@keyframes cooldown {
+    0% { width: 100%; }
+    100% { width: 0; }
 }
 
 .error, .inf {

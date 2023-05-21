@@ -15,8 +15,6 @@ function App() {
 
     setIsLoading(true);
 
-    console.log(groupName);
-
     const response = await fetch('http://tigelcid.duckdns.org:8080/send', {
       method: 'POST',
       headers: {'Content-Type': "application/json"},
@@ -26,14 +24,18 @@ function App() {
     const json = await response.json();
 
     if (!response.ok) {
-      setIsLoading(false);
       setInf(null);
       setError(json.err);
+      setTimeout(function() {
+        setIsLoading(false);
+      }, 500);
     }
     if (response.ok) {
-      setIsLoading(false);
       setError(null);
-      setInf(json.msg)
+      setInf(json.msg);
+      setTimeout(function() {
+        setIsLoading(false);
+      }, 6000);
     }
   }
 
@@ -63,14 +65,15 @@ function App() {
         <input
           type="number"
           min={1}
-          max={10}
+          max={5}
           name="times"
           id="times"
           placeholder="times"
           value={times}
+          disabled={true}
           onChange={(e) => setTimes(e.target.value)}
         />
-        <button disabled={isLoading}>ok</button>
+        <button disabled={isLoading} className="cooldown">ok</button>
 
         {error && <div className="error">{error}</div>}
         {inf && <div className="inf">{inf}</div>}
