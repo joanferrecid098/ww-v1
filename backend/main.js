@@ -42,14 +42,16 @@ client.on('message', msg => {
     }*/
 });
 
-async function enviar({ msg, group }) {
+async function enviar({ msg, group, times }) {
     let chats = await client.getChats();
         const chat = chats.find(
             (chat) => chat.name === group
         );
 
-    if(chat && chat.isGroup){
-        chat.sendMessage(msg);
+    if(chat && chat.isGroup) {
+        for (let i = 1; i <= times; ++i) {
+            chat.sendMessage(msg);
+        }
         return true;
     } else {
         return false;

@@ -7,6 +7,7 @@ function App() {
   const [error, setError] = useState(null);
   const [inf, setInf] = useState(null);
   const [msg, setMsg] = useState("");
+  const [times, setTimes] = useState(1);
   const [groupName, setGroupName] = useState("");
 
   const handleSubmit = async (e) => {
@@ -16,10 +17,10 @@ function App() {
 
     console.log(groupName);
 
-    const response = await fetch('http://localhost:8080/send', {
+    const response = await fetch('/send', {
       method: 'POST',
       headers: {'Content-Type': "application/json"},
-      body: JSON.stringify({ msg, groupName })
+      body: JSON.stringify({ msg, groupName, times })
     })
 
     const json = await response.json();
@@ -37,7 +38,7 @@ function App() {
   }
 
   return (
-    <div className="Home">
+    <div className="Home margin">
       <h1>Caca</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -59,6 +60,16 @@ function App() {
           <option value="Classe 6èB|❤💙|🤍💜">Classe 6èB|❤💙|🤍💜</option>
           <option value="Classe 6èB😎">Classe 6èB😎</option>
         </select>
+        <input
+          type="number"
+          min={1}
+          max={10}
+          name="times"
+          id="times"
+          placeholder="times"
+          value={times}
+          onChange={(e) => setTimes(e.target.value)}
+        />
         <button disabled={isLoading}>ok</button>
 
         {error && <div className="error">{error}</div>}
