@@ -17,7 +17,7 @@ function App() {
 
     console.log(groupName);
 
-    const response = await fetch('/send', {
+    const response = await fetch('http://tigelcid.duckdns.org:8080/send', {
       method: 'POST',
       headers: {'Content-Type': "application/json"},
       body: JSON.stringify({ msg, groupName, times })
