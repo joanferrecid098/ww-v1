@@ -11,26 +11,27 @@ This repository contains a WhatsApp bot that allows you to send anonymous messag
 ## Installation
 
 1. Clone the repository to your local machine.
-`git clone https://github.com/joanferrecid098/ww-v1.git`
+``git clone https://github.com/joanferrecid098/ww-v1.git``
 
 2. Navigate to the project root directory.
 
-`cd frontend
-npm install`
+``cd frontend
+npm install``
 
-`cd ../backend
-npm install`
+``cd ../backend
+npm install``
 
 5. Start the frontend.
 
-`cd ../frontend
-npm start`
+``cd ../frontend
+npm start``
 
 6. Start the server.
-`cd ../backend
-npm start`
 
-7. Open your browser and navigate to `http://localhost:3000` to access the WhatsApp anonymous messaging web interface.
+``cd ../backend
+npm start``
+
+7. Open your browser and navigate to ``http://localhost:3000`` to access the WhatsApp anonymous messaging web interface.
 
 ## Usage
 
