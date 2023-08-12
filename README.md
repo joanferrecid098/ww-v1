@@ -27,10 +27,18 @@ npm install``
 ``cd ../frontend
 npm start``
 
-6. Start the server.
+6. Build the server.
 
 ``cd ../backend
-npm start``
+npm build``
+
+7. Install serve
+
+``npm install -g serve``
+
+8. Start the server
+
+``serve -s build``
 
 7. Open your browser and navigate to ``http://localhost:3000`` to access the WhatsApp anonymous messaging web interface.
 
