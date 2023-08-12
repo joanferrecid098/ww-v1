@@ -83,4 +83,4 @@ This project is licensed under the [MIT License](LICENSE). Feel free to modify a
 
 This WhatsApp anonymous messaging bot is intended for educational and personal use only. Please use it responsibly and respect the privacy and guidelines of the WhatsApp platform. We do not endorse or promote any misuse of this bot, including spamming or sending inappropriate messages. Use it at your own risk.
 
-Also,this project might not be updated anytime soon,so don't expect receiving updates for changes in the API.
+Note: his project will receive updates very rarely (except contributions)
