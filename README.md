@@ -1,11 +1,12 @@
 # WhatsApp Anonymous Messaging Bot
 
-This repository contains a WhatsApp bot that allows you to send anonymous messages to groups. The bot provides a web interface where you can compose and send messages, while ensuring your anonymity. 
+## IMPORTANT NOTE: THIS PROJECT WAS MADE FOR FUN AND IS OPEN TO VULNERABILITIES. It was made with a un-official package for the WhatsApp API.
+
+Make your friends hate you by making your WhatsApp account say anything from anyone. There is basically a React website where you write any message you want in any of the defined group chats, and the device that scanned the QR code will send it.
 
 ## Requirements
 - Node.js (version X.X.X)
 - NPM (version X.X.X)
-- MongoDB (version X.X.X)
 - WhatsApp account
 
 ## Installation
@@ -32,6 +33,25 @@ npm start``
 npm start``
 
 7. Open your browser and navigate to ``http://localhost:3000`` to access the WhatsApp anonymous messaging web interface.
+
+8. (optional) If you want to make it accesible by anyone, you can port forward the port 3000 from the machine you are hosting it on.
+
+## Configuration
+
+1. In the ``backend`` directory, edit the ``config.yml`` file and set the `groups` value:
+
+Change from:
+``
+groups: []
+``
+
+To
+
+``
+groups:
+  - display: "[THE NAME YOU WANT TO DISPLAY IN THE WEBSITE]"
+    name: "[THE *EXACT* NAME OF THE GROUP]"
+``
 
 ## Usage
 
@@ -62,3 +82,5 @@ This project is licensed under the [MIT License](LICENSE). Feel free to modify a
 ## Disclaimer
 
 This WhatsApp anonymous messaging bot is intended for educational and personal use only. Please use it responsibly and respect the privacy and guidelines of the WhatsApp platform. We do not endorse or promote any misuse of this bot, including spamming or sending inappropriate messages. Use it at your own risk.
+
+Also,this project might not be updated anytime soon,so don't expect receiving updates for changes in the API.
