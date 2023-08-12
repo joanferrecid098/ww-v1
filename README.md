@@ -41,17 +41,17 @@ npm start``
 1. In the ``backend`` directory, edit the ``config.yml`` file and set the `groups` value:
 
 Change from:
-``
+```
 groups: []
-``
+```
 
 To
 
-``
+```
 groups:
   - display: "[THE NAME YOU WANT TO DISPLAY IN THE WEBSITE]"
     name: "[THE *EXACT* NAME OF THE GROUP]"
-``
+```
 
 ## Usage
 
