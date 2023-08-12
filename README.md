@@ -40,9 +40,9 @@ npm build``
 
 ``serve -s build``
 
-7. Open your browser and navigate to ``http://localhost:3000`` to access the WhatsApp anonymous messaging web interface.
+9. Open your browser and navigate to ``http://localhost:3000`` to access the WhatsApp anonymous messaging web interface.
 
-8. (optional) If you want to make it accesible by anyone, you can port forward the port 3000 from the machine you are hosting it on.
+10. (optional) If you want to make it accesible by anyone, you can port forward the port 3000 from the machine you are hosting it on.
 
 ## Configuration
 
