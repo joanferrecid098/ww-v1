@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles.css';
 import './Form.css';
 
@@ -9,13 +9,32 @@ function App() {
   const [msg, setMsg] = useState("");
   const [times, setTimes] = useState(1);
   const [groupName, setGroupName] = useState("");
+  const [groups, setGroups] = useState(null)
+
+  useEffect(() => {
+
+    async function fetchGroups() {
+      const response = await fetch('http://localhost:8080/groups', {
+        method: 'POST',
+        headers: {'Content-Type': "application/json"}
+      })
+
+      const json = await response.json();
+
+      console.log(json)
+
+      setGroups(json.groups);
+    }
+
+    fetchGroups();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setIsLoading(true);
 
-    const response = await fetch('http://tigelcid.duckdns.org:8080/send', {
+    const response = await fetch('http://localhost:8080/send', {
       method: 'POST',
       headers: {'Content-Type': "application/json"},
       body: JSON.stringify({ msg, groupName, times })
@@ -39,6 +58,8 @@ function App() {
     }
   }
 
+  if (!groups) return <h3>Loading...</h3>;
+
   return (
     <div className="Home margin">
       <h1>Caca</h1>
@@ -58,9 +79,9 @@ function App() {
           onChange={(e) => setGroupName(e.target.value)}
         >
           <option disabled={true} value="">select a group</option>
-          <option value="Jijijija">Jijijija</option>
-          <option value="Classe 6èB|❤💙|🤍💜">Classe 6èB|❤💙|🤍💜</option>
-          <option value="Classe 6èB😎">Classe 6èB😎</option>
+          {groups.map((group) => (
+            <option value={group.name}>{group.display}</option>
+          ))}
         </select>
         <input
           type="number"

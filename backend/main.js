@@ -13,13 +13,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', './public');
 app.set('view engine', 'ejs');
 
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, NoAuth } = require('whatsapp-web.js');
 const client = new Client({
-    authStrategy: new LocalAuth()
+    authStrategy: new NoAuth()
 });
 
+let doc;
+
 try {
-    const doc = yaml.load(fs.readFileSync('./config.yml', 'utf8'));
+    doc = yaml.load(fs.readFileSync('./config.yml', 'utf8'));
     console.log(doc);
 } catch (e) {
     console.log(e);
