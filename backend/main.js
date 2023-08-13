@@ -2,6 +2,8 @@ const qrcode = require('qrcode-terminal');
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const yaml = require('js-yaml');
+const fs = require('fs');
 
 const app = express();
 app.use(cors());
@@ -16,8 +18,15 @@ const client = new Client({
     authStrategy: new LocalAuth()
 });
 
+try {
+    const doc = yaml.load(fs.readFileSync('./config.yml', 'utf8'));
+    console.log(doc);
+} catch (e) {
+    console.log(e);
+}
+
 // EXPRESS
-require('./routers/msg.js')(app, enviar);
+require('./routers/msg.js')(app, { enviar, doc });
 
 app.listen(8080);
 

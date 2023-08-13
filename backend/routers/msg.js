@@ -1,4 +1,4 @@
-const router = (app, enviar) => {
+const router = (app, { enviar, doc }) => {
     app.post('/send', async (req, res) => {
         const { msg, groupName, times } = req.body;
         
@@ -22,6 +22,10 @@ const router = (app, enviar) => {
             return res.status(400).json({ err: `Error al enviar mensaje desde ${ipAddress}` })
         }
     });
+
+    app.post('/groups', (req, res) => {
+        res.status(200).json(doc);
+    })
 }
 
 module.exports = router;
