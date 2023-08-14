@@ -5,8 +5,8 @@
 Make your friends hate you by making your WhatsApp account say anything from anyone. There is basically a React website where you write any message you want in any of the defined group chats, and the device that scanned the QR code will send it.
 
 ## Requirements
-- Node.js (version X.X.X)
-- NPM (version X.X.X)
+- Node.js (version 18.17.1)
+- NPM (version 9.5.1)
 - WhatsApp account
 
 ## Installation
