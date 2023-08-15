@@ -11,10 +11,13 @@ function App() {
   const [groupName, setGroupName] = useState("");
   const [groups, setGroups] = useState(null)
 
+  const serverUrl = window.location.protocol + '//' + window.location.hostname + ':8080';
+  console.log(serverUrl);
+
   useEffect(() => {
 
     async function fetchGroups() {
-      const response = await fetch('http://localhost:8080/groups', {
+      const response = await fetch(`${serverUrl}/groups`, {
         method: 'POST',
         headers: {'Content-Type': "application/json"}
       })
@@ -34,7 +37,7 @@ function App() {
 
     setIsLoading(true);
 
-    const response = await fetch('http://localhost:8080/send', {
+    const response = await fetch(`${serverUrl}/send`, {
       method: 'POST',
       headers: {'Content-Type': "application/json"},
       body: JSON.stringify({ msg, groupName, times })
@@ -62,7 +65,7 @@ function App() {
 
   return (
     <div className="Home margin">
-      <h1>Caca</h1>
+      <h1>WAM Bot</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

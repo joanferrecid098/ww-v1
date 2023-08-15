@@ -11,6 +11,7 @@ input, select, button {
     font-size: medium;
     box-sizing: border-box;
     resize: vertical;
+    border: #ababab 2px solid;
 }
 
 input[type=number] {
@@ -20,6 +21,7 @@ input[type=number] {
 button {
     margin-left: 10px;
     background: #0059ff;
+    border: #4283fb 2px solid;
     color: white;
 }
 

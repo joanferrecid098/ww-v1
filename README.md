@@ -5,8 +5,8 @@
 Make your friends hate you by making your WhatsApp account say anything from anyone. There is basically a React website where you write any message you want in any of the defined group chats, and the device that scanned the QR code will send it.
 
 ## Requirements
-- Node.js (version 18.17.1)
-- NPM (version 9.5.1)
+- Node.js (version 18.X.X)
+- NPM (version 9.X.X)
 - WhatsApp account
 
 ## Installation
@@ -42,7 +42,7 @@ npm build``
 
 9. Open your browser and navigate to ``http://localhost:3000`` to access the WhatsApp anonymous messaging web interface.
 
-10. (optional) If you want to make it accesible by anyone, you can port forward the port 3000 from the machine you are hosting it on.
+10. (optional) If you want to make it accesible by anyone, you can port forward the port 3000 and 8080 from the machine you are hosting it on.
 
 ## Configuration
 
