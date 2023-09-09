@@ -12,33 +12,47 @@ Make your friends hate you by making your WhatsApp account say anything from any
 ## Installation
 
 1. Clone the repository to your local machine.
-``git clone https://github.com/joanferrecid098/ww-v1.git``
+```bash
+git clone https://github.com/joanferrecid098/ww-v1.git
+```
 
 2. Navigate to the project root directory.
 
-``cd frontend
-npm install``
+```bash
+cd frontend
+npm install
+```
 
-``cd ../backend
-npm install``
+```bash
+cd ../backend
+npm install
+```
 
 5. Start the frontend.
 
-``cd ../frontend
-npm start``
+```bash
+cd ../frontend
+npm start
+```
 
 6. Build the server.
 
-``cd ../backend
-npm build``
+```bash
+cd ../backend
+npm build
+```
 
 7. Install serve
 
-``npm install -g serve``
+```bash
+npm install -g serve
+```
 
 8. Start the server
 
-``serve -s build``
+```bash
+serve -s build
+```
 
 9. Open your browser and navigate to ``http://localhost:3000`` to access the WhatsApp anonymous messaging web interface.
 
@@ -49,13 +63,13 @@ npm build``
 1. In the ``backend`` directory, edit the ``config.yml`` file and set the `groups` value:
 
 Change from:
-```
+```yaml
 groups: []
 ```
 
 To
 
-```
+```yaml
 groups:
   - display: "[THE NAME YOU WANT TO DISPLAY IN THE WEBSITE]"
     name: "[THE *EXACT* NAME OF THE GROUP]"
