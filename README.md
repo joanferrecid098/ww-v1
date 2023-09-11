@@ -1,3 +1,4 @@
+[![License](https://img.shields.io/github/license/joanferrecid098/ww-v1)](https://github.com/joanferrecid098/ww-v1/blob/main/LICENSE)
 # WhatsApp Anonymous Messaging Bot
 
 ## IMPORTANT NOTE: THIS PROJECT WAS MADE FOR FUN AND IS OPEN TO VULNERABILITIES. It was made with a un-official package for the WhatsApp API.
