@@ -1,8 +1,6 @@
 [![License](https://img.shields.io/github/license/joanferrecid098/ww-v1)](https://github.com/joanferrecid098/ww-v1/blob/main/LICENSE)
 # WhatsApp Anonymous Messaging Bot
 
-## IMPORTANT NOTE: THIS PROJECT WAS MADE FOR FUN AND IS OPEN TO VULNERABILITIES. It was made with a un-official package for the WhatsApp API.
-
 Make your friends hate you by making your WhatsApp account say anything from anyone. There is basically a React website where you write any message you want in any of the defined group chats, and the device that scanned the QR code will send it.
 
 ## Requirements
@@ -105,3 +103,5 @@ This project is licensed under the [MIT License](LICENSE). Feel free to modify a
 ## Disclaimer
 
 This WhatsApp anonymous messaging bot is intended for educational and personal use only. Please use it responsibly and respect the privacy and guidelines of the WhatsApp platform. We do not endorse or promote any misuse of this bot, including spamming or sending inappropriate messages. Use it at your own risk.
+
+### IMPORTANT NOTE: THIS PROJECT WAS MADE FOR FUN AND IS OPEN TO VULNERABILITIES. It was made with a un-official package for the WhatsApp API.
