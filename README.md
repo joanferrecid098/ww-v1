@@ -1,5 +1,5 @@
-[![License](https://img.shields.io/github/license/joanferrecid098/ww-v1)](https://github.com/joanferrecid098/ww-v1/blob/main/LICENSE)
 # WhatsApp Anonymous Messaging Bot
+[![License](https://img.shields.io/github/license/joanferrecid098/ww-v1)](https://github.com/joanferrecid098/ww-v1/blob/main/LICENSE)
 
 Make your friends hate you by making your WhatsApp account say anything from anyone. There is basically a React website where you write any message you want in any of the defined group chats, and the device that scanned the QR code will send it.
 
