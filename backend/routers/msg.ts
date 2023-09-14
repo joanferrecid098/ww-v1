@@ -32,9 +32,7 @@ const router = (app:Express, { enviar, doc }:InputData) => {
     });
 
     app.post('/groups', (req, res) => {
-        const document = JSON.parse(process.env.GROUPS!) || doc;
-
-        res.status(200).json(document);
+        res.status(200).json(doc);
     })
 }
 
