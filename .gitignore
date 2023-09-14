@@ -126,5 +126,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-backend/.wwebjs_auth/
-frontend/build/
+.wwebjs_auth/
+.wwebjs_cache/
+build/
