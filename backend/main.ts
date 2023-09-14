@@ -51,7 +51,7 @@ interface Chat {
 }
 
 // EXPRESS
-require('./routers/msg.js')(app, { enviar, doc });
+require('./routers/msg.ts')(app, { enviar, doc });
 
 app.listen(8080);
 
