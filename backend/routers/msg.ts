@@ -1,4 +1,12 @@
-const router = (app, { enviar, doc }) => {
+import { Express } from 'express';
+
+// Interfaces
+interface InputData {
+    enviar: Function;
+    doc: JSON;
+}
+
+const router = (app:Express, { enviar, doc }:InputData) => {
     app.post('/send', async (req, res) => {
         const { msg, groupName, times } = req.body;
         
